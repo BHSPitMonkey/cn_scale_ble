@@ -8,7 +8,7 @@ dynamic = ["version"]
 authors = [
   { name="Ron", email="ronnnnnnn@gmail.com" },
 ]
-description = "An unofficial Python package for interacting with CN-Scale smart scales using BLE. Not affiliated with the manufacturer or any of their subsidiaries."
+description = "An unofficial Python package for interacting with QN-Scale smart scales using BLE. Not affiliated with the manufacturer or any of their subsidiaries."
 readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"

@@ -1,4 +1,4 @@
-# CN Scale BLE
+# QN Scale BLE
 
 This package is a fork of https://github.com/ronnnnnnnnnnnnn/etekcity_esf551_ble that has been modified to connect to the FITINDEX ES-26M Bluetooth smart scale, internally named "QN-Scale". The modifications were based on the reverse engineering work and code in the [OpenScale project](https://github.com/oliexdev/openScale).
 
