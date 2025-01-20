@@ -1,11 +1,11 @@
 from ._version import __version__
-from .body_metrics import BodyMetrics, EtekcitySmartFitnessScaleWithBodyMetrics, Sex
+from .body_metrics import BodyMetrics, QnScaleWithBodyMetrics, Sex
 from .const import IMPEDANCE_KEY, WEIGHT_KEY
-from .parser import EtekcitySmartFitnessScale, ScaleData, WeightUnit
+from .parser import QnScale, ScaleData, WeightUnit
 
 __all__ = [
-    "EtekcitySmartFitnessScale",
-    "EtekcitySmartFitnessScaleWithBodyMetrics",
+    "QnScale",
+    "QnScaleWithBodyMetrics",
     "WeightUnit",
     "ScaleData",
     "IMPEDANCE_KEY",

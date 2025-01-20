@@ -5,7 +5,7 @@ from functools import cached_property
 from math import floor
 
 from .const import IMPEDANCE_KEY, WEIGHT_KEY
-from .parser import EtekcitySmartFitnessScale, ScaleData, WeightUnit
+from .parser import QnScale, ScaleData, WeightUnit
 
 
 class Sex(IntEnum):
@@ -323,7 +323,7 @@ def _as_dictionary(obj: BodyMetrics) -> dict[str, int | float]:
         return{prop: getattr(obj, prop) for prop in dir(obj) if not prop.startswith('__')}
 
 
-class EtekcitySmartFitnessScaleWithBodyMetrics(EtekcitySmartFitnessScale):
+class QnScaleWithBodyMetrics(QnScale):
     def __init__(
         self,
         address: str,

@@ -131,7 +131,7 @@ def parse(payload: bytearray) -> dict[str, int | float | None]:
     return None
 
 
-class EtekcitySmartFitnessScale:
+class QnScale:
     _client: BleakClient = None
     _hw_version: str = None
     _sw_version: str = None
@@ -174,14 +174,14 @@ class EtekcitySmartFitnessScale:
     async def async_start(self) -> None:
         """Start the callbacks."""
         _LOGGER.info(
-            "Starting EtekcitySmartFitnessScale for address: %s", self.address
+            "Starting QnScale for address: %s", self.address
         )
         await self._scanner.start()
 
     async def async_stop(self) -> None:
         """Stop the callbacks."""
         _LOGGER.info(
-            "Stopping EtekcitySmartFitnessScale for address: %s", self.address
+            "Stopping QnScale for address: %s", self.address
         )
         await self._scanner.stop()
 

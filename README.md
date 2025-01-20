@@ -1,13 +1,6 @@
-# Etekcity ESF-551 BLE
+# CN Scale BLE
 
-This package provides a basic unofficial interface for interacting with [Etekcity ESF-551 Smart Fitness Scale](https://etekcity.com/products/smart-fitness-scale-esf551) using Bluetooth Low Energy (BLE). It allows you to easily connect to the scale, receive weight and impedance measurements, manage the display unit settings, and calculate various body metrics.
-
-It has only been tested on the ESF-551 model. I have no idea whether it might also work with some other bluetooth bathroom scale models from Etekcity. If you try it with a different model, please let me know whether it works or not.
-
-**Disclaimer: This is an unofficial, community-developed library. It is not affiliated with, officially maintained by, or in any way officially connected with Etekcity, VeSync Co., Ltd. (the owner of the Etekcity brand), or any of their subsidiaries or affiliates. The official Etekcity website can be found at https://www.etekcity.com, and the official VeSync website at https://www.vesync.com. The names "Etekcity" and "VeSync" as well as related names, marks, emblems and images are registered trademarks of their respective owners.**
-
-[![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/ronnnnnnn)
-
+This package is a fork of https://github.com/ronnnnnnnnnnnnn/etekcity_esf551_ble that has been modified to connect to the FITINDEX ES-26M Bluetooth smart scale, internally named "QN-Scale". The modifications were based on the reverse engineering work and code in the [OpenScale project](https://github.com/oliexdev/openScale).
 
 ## Installation
 
@@ -24,10 +17,10 @@ Here's a basic example of how to use the library:
 
 ```python
 import asyncio
-from etekcity_esf551_ble import (
+from qn_scale_ble import (
     IMPEDANCE_KEY,
     WEIGHT_KEY,
-    EtekcitySmartFitnessScale,
+    QnScale,
     ScaleData,
     WeightUnit,
     BodyMetrics,
@@ -64,7 +57,7 @@ async def main():
             print(f"Metabolic Age: {body_metrics.metabolic_age} years")
 
     # Replace XX:XX:XX:XX:XX:XX with your scale's Bluetooth address
-    scale = EtekcitySmartFitnessScale("XX:XX:XX:XX:XX:XX", notification_callback)
+    scale = QnScale("XX:XX:XX:XX:XX:XX", notification_callback)
     scale.display_unit = WeightUnit.KG  # Set display unit to kilograms
 
     await scale.async_start()
@@ -78,7 +71,7 @@ For a real-life usage example of this library, check out the [Etekcity Fitness S
 
 ## API Reference
 
-### `EtekcitySmartFitnessScale`
+### `QnScale`
 
 The main class for interacting with the scale.
 
@@ -94,9 +87,9 @@ The main class for interacting with the scale.
 - `hw_version`: Get the hardware version of the scale (read-only).
 - `sw_version`: Get the software version of the scale (read-only).
 
-### `EtekcitySmartFitnessScaleWithBodyMetrics`
+### `QnScaleWithBodyMetrics`
 
-An extended version of EtekcitySmartFitnessScale that automatically calculates body metrics.
+An extended version of QnScale that automatically calculates body metrics.
 
 #### Methods:
 
@@ -184,10 +177,11 @@ scan on
 
 ## Support the Project
 
-If you find this unofficial project helpful, consider buying me a coffee! Your support helps maintain and improve this library.
+If you find this unofficial project helpful, consider buying the upstream project author(s) a coffee!
 
-[![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/ronnnnnnn)
+etekcity_esf551_ble: [![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/ronnnnnnn)
 
+OpenScale: [Donations](https://github.com/oliexdev/openScale?tab=readme-ov-file#donations-heart)
 
 ## License
 
@@ -196,4 +190,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Disclaimer
 
-This is an independent project developed by the community. It is not endorsed by, directly affiliated with, maintained, authorized, or sponsored by Etekcity, VeSync Co., Ltd., or any of their affiliates or subsidiaries. All product and company names are the registered trademarks of their original owners. The use of any trade name or trademark is for identification and reference purposes only and does not imply any association with the trademark holder of their product brand.
+This is an independent project developed by the community. It is not endorsed by, directly affiliated with, maintained, authorized, or sponsored by the scale manufacturers or any of their affiliates or subsidiaries. All product and company names are the registered trademarks of their original owners. The use of any trade name or trademark is for identification and reference purposes only and does not imply any association with the trademark holder of their product brand.

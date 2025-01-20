@@ -140,7 +140,7 @@ jobs:
           python -m venv test-env
           . test-env/bin/activate
           pip install etekcity_esf551_ble==$VERSION
-          python -c "from etekcity_esf551_ble import EtekcitySmartFitnessScale, WeightUnit; print(EtekcitySmartFitnessScale, WeightUnit)"
+          python -c "from etekcity_esf551_ble import QnScale, WeightUnit; print(QnScale, WeightUnit)"
       - name: Upload Release Assets
         uses: actions/github-script@v6
         with:
