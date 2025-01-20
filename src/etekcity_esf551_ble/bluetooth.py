@@ -135,3 +135,13 @@ def create_adv_receiver(
         return AdvertisementReceiver(**scanner_kwargs)
     except (FileNotFoundError, BleakError) as ex:
         raise RuntimeError(f"Failed to initialize Bluetooth: {ex}") from ex
+
+def sum_checksum(
+    data: bytearray,
+    offset: int,
+    length: int,
+) -> int:
+    checksum = 0
+    for i in range(offset, offset + length - 1):
+        checksum += data[i]
+    return checksum
