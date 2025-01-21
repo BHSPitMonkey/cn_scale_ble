@@ -6,15 +6,14 @@ build-backend = "hatchling.build"
 name = "qn_scale_ble"
 dynamic = ["version"]
 authors = [
-  { name="Ron", email="ronnnnnnn@gmail.com" },
+  { name="BHSPitMonkey", email="bhs2007@gmail.com" },
 ]
 description = "An unofficial Python package for interacting with QN-Scale smart scales using BLE. Not affiliated with the manufacturer or any of their subsidiaries."
 readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"
 keywords = [
-    "etekcity",
-    "esf551",
+    "qn-scale",
     "smart scale",
     "fitness scale",
     "bluetooth",
@@ -41,16 +40,16 @@ dependencies = [
 ]
 
 [tool.hatch.version]
-path = "src/etekcity_esf551_ble/_version.py"
+path = "src/qn_scale_ble/_version.py"
 
 [project.urls]
-"Homepage" = "https://github.com/ronnnnnnnnnnnnn/etekcity_esf551_ble"
-"Bug Tracker" = "https://github.com/ronnnnnnnnnnnnn/etekcity_esf551_ble/issues"
-"Documentation" = "https://github.com/ronnnnnnnnnnnnn/etekcity_esf551_ble#readme"
-"Source Code" = "https://github.com/ronnnnnnnnnnnnn/etekcity_esf551_ble"
+"Homepage" = "https://github.com/BHSPitMonkey/qn_scale_ble"
+"Bug Tracker" = "https://github.com/BHSPitMonkey/qn_scale_ble/issues"
+"Documentation" = "https://github.com/BHSPitMonkey/qn_scale_ble#readme"
+"Source Code" = "https://github.com/BHSPitMonkey/qn_scale_ble/"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/etekcity_esf551_ble"]
+packages = ["src/qn_scale_ble"]
 
 [tool.hatch.build.targets.sdist]
 include = [

@@ -7,7 +7,7 @@ This package is a fork of https://github.com/ronnnnnnnnnnnnn/etekcity_esf551_ble
 Install the package using pip:
 
 ```bash
-pip install etekcity_esf551_ble
+pip install qn_scale_ble
 ```
 
 

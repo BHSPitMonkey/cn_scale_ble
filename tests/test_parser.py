@@ -2,8 +2,8 @@ from unittest.mock import AsyncMock, Mock, patch
 
 import pytest
 
-from src.etekcity_esf551_ble.const import DISPLAY_UNIT_KEY, IMPEDANCE_KEY, WEIGHT_KEY
-from src.etekcity_esf551_ble.parser import (
+from src.qn_scale_ble.const import DISPLAY_UNIT_KEY, IMPEDANCE_KEY, WEIGHT_KEY
+from src.qn_scale_ble.parser import (
     QnScale,
     ScaleData,
     WeightUnit,
@@ -88,7 +88,7 @@ def test_parse(test_id, input_data, expected_output):
 @pytest.mark.asyncio
 async def test_scale_start_stop():
     with patch(
-        "src.etekcity_esf551_ble.parser.create_adv_receiver"
+        "src.qn_scale_ble.parser.create_adv_receiver"
     ) as mock_create_adv_receiver:
         mock_scanner = AsyncMock()
         mock_create_adv_receiver.return_value = mock_scanner
